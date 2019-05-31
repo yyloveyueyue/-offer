@@ -18,7 +18,9 @@ class Solution:
         if not root or root.val > expectNumber:
             return []
 
-        if not root.left and not root.right and root.val == expectNumber:
+        # if not root.left and not root.right and root.val == expectNumber:
+        #     return [[root.val]]
+        if root.val == expectNumber:
             return [[root.val]]
         else:
             expectNumber -= root.val
@@ -34,7 +36,7 @@ class Solution:
 def test():
     root = TreeNode(1)
     a1 = TreeNode(2)
-    a2 = TreeNode(3)
+    a2 = TreeNode(6)
     a11 = TreeNode(4)
     a12 = TreeNode(5)
     a22 = TreeNode(6)
@@ -57,7 +59,7 @@ def test():
     a22.right = a222
 
     s = Solution()
-    result = s.FindPath(root, 16)
+    result = s.FindPath(root, 7)
     print(result)
 
 if __name__ == '__main__':
