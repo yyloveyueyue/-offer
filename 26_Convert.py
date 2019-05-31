@@ -79,5 +79,7 @@ a22.right = a222
 
 s = Solution()
 result = s.Convert(root)
-print(result.val)
+while result.right:
+    print(result.val)
+    result = result.right
 
